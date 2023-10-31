@@ -61,16 +61,16 @@ const treeData = [
     children: [
       {
         title: 'Лучшие дипломные работы',
-        value: '0-0-1',
+        value: '0-1-1',
         children: [
           {
-            title: 'АСУ',
-            value: '0-0-1-0',
+            title: 'АСУ1',
+            value: '0-1-1-0',
 
           },
           {
             title: 'АПД',
-            value: '0-0-1-1',
+            value: '0-1-1-1',
           }
         ]
       },
@@ -131,8 +131,8 @@ export default function Home() {
               gutter: 16,
               xs: 1,
               sm: 2,
-              md: 3,
-              lg: 4,
+              md: 2,
+              lg: 3,
               xl: 5,
               xxl: 6,
             }}

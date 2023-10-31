@@ -25,6 +25,7 @@ const { Title } = Typography;
 export default function LogIn() {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
 
+
   return (
     <>
       <Layout>
@@ -35,10 +36,10 @@ export default function LogIn() {
         </Header>
         <Content style={{ height: "calc(100vh - 55px)" }}>
           <Flex align="center" justify="center">
-            <Space direction="vertical" style={{maxWidth: "280px"}}>
+            <Space direction="vertical" style={{ maxWidth: "280px" }}>
               <Title level={3}>Зайти в электронную библиотеку</Title>
-              <Input  size={"middle"} placeholder="login" />
-              <Input.Password  size={"middle"} placeholder="password"/>
+              <Input size={"middle"} placeholder="login" />
+              <Input.Password size={"middle"} placeholder="password" />
               <Button style={{ minWidth: "280px" }} type="primary" size={"middle"}>
                 Войти
               </Button>

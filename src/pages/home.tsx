@@ -79,6 +79,41 @@ const treeData = [
   },
 ];
 
+function CardView() {
+  return (
+    <List
+      grid={{
+        gutter: 16,
+        xs: 1,
+        sm: 2,
+        md: 2,
+        lg: 3,
+        xl: 5,
+        xxl: 6,
+      }}
+      dataSource={data}
+      renderItem={(item) => (
+        <List.Item>
+          <Card title={item.title} style={{ minWidth: "250px" }} bodyStyle={{ justifyContent: 'space-between', boxShadow: "none" }}>
+            <Flex justify="space-between" align="flex-start">
+              <Space direction="vertical" size={"middle"}>
+                {item.author}
+                {item.bookStartYear}
+                {item.numOfPages}
+              </Space>
+              <img
+                alt="preview"
+                src="src\assets\cover.jpg"
+                style={{ borderRadius: "10px", width: "calc(100% - 0px)", minWidth: "75px", maxWidth: "320px" }}
+              />
+            </Flex>
+          </Card>
+        </List.Item>
+      )}
+    />
+  );
+
+}
 
 export default function Home() {
   const [value, setValue] = useState<string>();
@@ -100,7 +135,6 @@ export default function Home() {
             <Col>
               <Button>Profile</Button>
             </Col>
-
           </Row>
         </Header>
         <Content style={{ height: "100%", marginTop: "25px", marginLeft: "16px", marginRight: "16px" }}>
@@ -126,90 +160,10 @@ export default function Home() {
             showSearch={true}
           />
           <Divider />
-          <List
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 2,
-              lg: 3,
-              xl: 5,
-              xxl: 6,
-            }}
-            dataSource={data}
-            renderItem={(item) => (
-              <List.Item>
-                <Card title={item.title} style={{minWidth:"250px"}} bodyStyle={{ justifyContent: 'space-between', boxShadow: "none"}}>
-                  <Flex justify="space-between" align="flex-start">
-                    <Space direction="vertical" size={"middle"}>
-                      {item.author}
-                      {item.bookStartYear}
-                      {item.numOfPages}
-                    </Space>
-                    <img
-                      alt="preview"
-                      src="src\assets\cover.jpg"
-                      style={{ borderRadius: "10px", width: "calc(100% - 0px)", minWidth: "75px", maxWidth: "320px" }}
-                    />
-                  </Flex>
-                </Card>
-              </List.Item>
-            )}
-          />
-          {/* <List
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 4,
-              lg: 4,
-              xl: 6,
-              xxl: 3,
-            }}
-            itemLayout="horizontal"
-            size="large"
-            pagination={{
-              align: "center",
-              onChange: (page) => {
-                console.log(page);
-              },
-              pageSize: 10,
-            }}
-            dataSource={data}
-            renderItem={(item) => (
-              <Card style={{ padding: "8px" }} >
-                
-                  <List.Item
-                    key={item.title}
-                    extra={
-                      <img
-                        alt="preview"
-                        src="src\assets\cover.jpg"
-                        style={{ borderRadius: "10px", width: "calc(100% - 0px)", minWidth:"100px", maxWidth:"320px" }}
-                      />
-                    }
-                  >
-                    <List.Item.Meta
-                      title={<p>{item.title}</p>}
-                      description={<a href={item.bookId}>Book ID: {item.bookId}</a>}
-                    />
-
-                    <Space direction="vertical">
-                      {item.author}
-                      {item.bookStartYear}
-                      {item.numOfPages}
-                    </Space>
-
-                  </List.Item>
-                
-              </Card>
-            )}
-          /> */}
+          <CardView />
           <Divider />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
-
-
+        <Footer style={{ textAlign: 'center' }}>prod by ТVEV</Footer>
       </Layout>
     </>
   );

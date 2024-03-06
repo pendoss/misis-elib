@@ -2,9 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import Profile from './pages/profile.tsx'
+import Home from './pages/home.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Profile />
+    <Home />
   </React.StrictMode>,
 )
